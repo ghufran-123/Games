@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- creating hangman -->
+    <div class="mr">
+        <img style="position: absolute;" src="./img/hangman 01.png" alt="">
+        <span></span>
+        <img src="./img/image-removebg-preview (51).png" class="death d-hn" alt="">
+        <img src="./img/image-removebg-preview (54).png" class="happy d-hn" alt="">
+        <div id="1" class="circle"></div>
+        <div id="2" class="line"></div>
+        <div id="3" class="hand1"></div>
+        <div id="4" class="hand2"></div>
+        <div id="5" class="leg1"></div>
+        <div id="6" class="leg2"></div>
+      </div>
+      <!-- <div> -->
+        <div class="row">
+            <div class="col-12">
+               <div class="bt">
+                <h6 style="margin-left: 3%;">Clue:- Which team lost most Tests in the first cycle of the WTC?</h6>
+                <h3>
+                    <span id="alpha1" class="d-hn">S</span>
+                    <span id="alpha2" class="d-hn">O</span>
+                    <span id="alpha3" class="d-hn">U</span>
+                    <span id="alpha4" class="d-hn">T</span>
+                    <span id="alpha5" class="d-hn">H</span>
+                    <span id="alpha6" class="d-hn">A</span>
+                    <span id="alpha7" class="d-hn">F</span>
+                    <span id="alpha8" class="d-hn">R</span>
+                    <span id="alpha9" class="d-hn">I</span>
+                    <span id="alpha10" class="d-hn">C</span>
+                    <span id="alpha11" class="d-hn">A</span>
+                </h3>
+                <hr>
+                <button id="A" class="btn btn-primary">A</button>
+                <button id="B" class="btn btn-primary">B</button>
+                <button id="C" class="btn btn-primary">C</button>
+                <button id="D" class="btn btn-primary">D</button>
+                <button id="E" class="btn btn-primary">E</button>
+                <button id="F" class="btn btn-primary">F</button>
+                <button id="G" class="btn btn-primary">G</button>
+                <button id="H" class="btn btn-primary">H</button>
+                <button id="I" class="btn btn-primary">I</button>
+                <button id="J" class="btn btn-primary">J</button>
+                <button id="K" class="btn btn-primary">K</button>
+                <button id="L" class="btn btn-primary">L</button>
+                <button id="M" class="btn btn-primary">M</button>
+               </div>
+            </div>
+            <div class="col-12">
+                <div class="bt2">
+                    <button id="N" class="btn btn-primary">N</button>
+                    <button id="O" class="btn btn-primary">O</button>
+                    <button id="P" class="btn btn-primary">P</button>
+                    <button id="Q" class="btn btn-primary">Q</button>
+                    <button id="R" class="btn btn-primary">R</button>
+                    <button id="S" class="btn btn-primary">S</button>
+                    <button id="T" class="btn btn-primary">T</button>
+                    <button id="U" class="btn btn-primary">U</button>
+                    <button id="V" class="btn btn-primary">V</button>
+                    <button id="W" class="btn btn-primary">W</button>
+                    <button id="X" class="btn btn-primary">X</button>
+                    <button id="Y" class="btn btn-primary">Y</button>
+                    <button id="Z" class="btn btn-primary">Z</button>
+                </div>
+            </div>
+
+        </div>
+      <!-- </div> -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</body>
+<script>
+    var arr=["S","O","U","T","H","A","F","R","I","C","A"];
+    var userInput=[];
+
+    $(".btn").click(user)
+    function user(e)
+    {
+        var btnPress = e.delegateTarget.attributes[0].nodeValue;
+        userInput.push(btnPress);
+        check(userInput.length-1);
+        
+    }
+    var id,ch=0,b=0;
+    var final=[];
+    function check(index)
+    {
+        // console.log(index);
+        ch=0;
+        for(var a=0;a<arr.length;a++)
+        {
+            if(arr[a]==userInput[index])
+            {
+                id=a+1;
+                $("#alpha"+ id).removeClass("d-hn")
+                $("#"+userInput[index]).attr("disabled","disabled");    
+                console.log(userInput.length);
+                final.push(userInput[index]);
+                ch=0;
+            }
+            else{
+                ch++;
+                $("#"+userInput[index]).attr("disabled","disabled");    
+                console.log(ch+ "ch" + " " + userInput[index]);
+            }
+            if(ch==11)
+            {
+                ch=0;
+                b++;
+                $("#"+ b).addClass("color");
+                if(b==6)
+                {
+                    $("img.death").removeClass("d-hn");
+                    alert("Game Over")
+                    $("span.d-hn").removeClass("d-hn");
+                    $("button.btn-primary").attr("disabled","disabled")
+                }
+            }
+            if(final.length==arr.length)             
+            {
+                $("img.happy").removeClass("d-hn");
+                alert("Level Up")
+                break;
+            }
+        }
+
+    }
+
+</script>
+</html>

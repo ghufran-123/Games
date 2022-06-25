@@ -1,0 +1,126 @@
+.sec1Bg
+{
+    background-image: url(./img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 12%;
+    padding-bottom: 8%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.sec1Heading
+{
+    /* margin-top: 10%;  */
+    font-size: 2rem;
+    margin-left: 30%;
+    color: orange;
+    margin-right: 30%;
+
+}
+.sec1Para
+{
+    margin-left: 32%;
+    margin-right: 33.5%;
+}
+.btn-primary
+{
+    background-color: orange;
+}
+.card-img-top
+{
+    height: 150px;
+}
+.footer
+{
+    background-color: rgb(28, 28, 28);
+    color: aliceblue;
+}
+
+.card-img-top
+{
+    margin: 0;
+    padding: 0;
+}
+.card
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10%;
+}
+.footerText
+{
+    margin-left: 10%;
+    margin-top: 10%;
+    padding-right: 30%;
+}
+.footerImg
+{
+    height: 70px;
+    border-radius: 10%;
+    width: 70px;
+    margin-top: 30%;
+    margin: 30% 2%;
+}
+@media screen and (max-width: 1300px) and (min-width: 1000px) {
+    .sec1Heading{
+        font-size: 1.5rem;
+    }
+    .footerText h3
+    {
+        font-size: 1rem;
+    }
+    .footerText p
+    {
+        font-size: 0.5rem;
+    }
+    .footerImg{
+        height: 50px;   
+        width: 50px;
+        margin-top: 9%;
+    }
+}
+@media screen and (max-width: 550px) and (min-width: 200px) {
+    .sec1Heading{
+        font-size: 0.8rem;
+        margin-left: 30%;
+        margin-right: 30%;
+
+    }
+    
+    .sec1Para
+    {
+        font-size: 0.4rem;
+    }
+    .footerText h3
+    {
+        font-size: 0.8rem;
+    }
+    .footerText p
+    {
+        font-size: 0.4rem;
+        padding-right: 50%;
+    }
+    .footerImg{
+        height: 20px;   
+        width: 20px;
+        margin-top: 9%;
+    }
+}
+@media screen and (max-width: 1000px) and (min-width: 550px) {
+    .sec1Heading{
+        font-size: 1.3rem;
+        margin-left: 30%;
+        margin-right: 30%;
+
+    }
+    
+    .sec1Para
+    {
+        font-size: .5rem;
+    }
+    .sec1Bg
+    {
+        padding-top: 5%;
+    }
+}

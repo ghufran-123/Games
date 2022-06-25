@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled">Disabled</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+    <div class="row container-fluid">
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/cycle.png" alt="" class="a img d-hn" id="cycle"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/crown.png" alt="" class="b img d-hn" id="crown"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/leaf.png" alt="" class="c img d-hn" id="leaf"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/tennis ball.png  " alt="" class="d img d-hn" id="tennisball"></div>
+      </div>
+    </div>
+    <div class="row container-fluid">
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/football.png" alt="" class="e img d-hn" id="football"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/tennis ball.png" alt="" class="f img d-hn" id="tennisball"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/swimming.png" alt="" class="g img d-hn" id="swimming"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/bus.png" alt="" class="h img d-hn" id="bus"></div>
+      </div>
+    </div>
+    <div class="row container-fluid">
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/crown.png" alt="" class="i img d-hn" id="crown"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/leaf.png" alt="" class="j img d-hn" id="leaf"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/bus.png" alt="" class="k img d-hn" id="bus"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/cloud.png" alt="" class="l img d-hn" id="cloud"></div>
+      </div>
+    </div>
+    <div class="row container-fluid">
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/swimming.png" alt="" class="m img d-hn" id="swimming"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/cycle.png" alt="" class="n img d-hn" id="cycle"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/cloud.png" alt="" class="o img d-hn" id="cloud"></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="box"><img src="./img/football.png" alt="" class="p img d-hn" id="football"></div>
+      </div>
+    </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</body>
+<script>
+  var id1="",id2="";
+  var a="",b="";
+  var state=true;
+  $(".box").click(function(e)
+  {
+    // a="";
+    // b="";
+    console.log(e);
+    if(state==true)
+    {
+      console.log(e.delegateTarget.children[0].classList[0]); 
+
+        a=(e.delegateTarget.children[0].classList[0]);
+        console.log(a);
+        id1=e.delegateTarget.childNodes[0].id;
+        $("#"+id1+"."+a).fadeIn(500).removeClass("d-hn");
+        console.log("#"+id1+"."+a + "id1111111");
+        state=false;
+    }
+    else
+    { 
+      console.log(e.delegateTarget.children[0].classList[0]); 
+      b=(e.delegateTarget.children[0].classList[0]);
+      id2=e.delegateTarget.childNodes[0].id;
+      state=true;
+      $("#"+id2+"."+b).fadeIn(500).removeClass("d-hn");
+      console.log("#"+id2+"."+a+"id222");
+    }
+    if(id1!="" && id2!="")
+    {
+      if(id1==id2)
+      {
+        console.log("kjsdfhjksdf");
+        id1="";
+        id2="";
+        a="";
+        b="";
+      }
+      else{
+        console.log(",sdjf");
+        console.log(a,b)
+        $("#"+id2+"."+b).fadeOut(200).addClass("d-hn")
+        $("#"+id1+"."+a).fadeOut(200).addClass("d-hn");
+        id1="";
+        id2="";
+        a="";
+        b="";
+      }
+    }
+  })
+
+</script>
+</html>

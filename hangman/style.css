@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.row{
+    padding: 0;
+    margin: 0;
+}
+.circle
+{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 8px solid grey;
+    z-index: 1;
+    margin-top: 4%;
+    margin-left: 15%;
+    position: absolute;
+}
+.line
+{
+    height: 80px;
+    border-left: 8px solid gray;
+    position: absolute;
+    margin-top: 9%;
+    margin-left: 17.3%;
+    z-index: 1;
+}
+.hand1
+{
+    height: 70px;
+    border-left: 8px solid gray;
+    position: absolute;
+    margin-top: 8.5%;
+    margin-left: 15.3%;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+.hand2
+{
+    height: 70px;
+    border-left: 8px solid gray;
+    position: absolute;
+    margin-top: 8.5%;
+    margin-left: 19.3%;
+    z-index: 1;
+    transform: rotate(130deg);
+}
+.leg1
+{
+    height: 80px;
+    border-left: 8px solid gray;
+    position: absolute;
+    margin-top: 13.7%;
+    margin-left: 15.2%;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+.leg2
+{
+    height: 80px;
+    border-left: 8px solid gray;
+    position: absolute;
+    margin-top: 13.7%;
+    margin-left: 19.2%;
+    z-index: 1;
+    transform: rotate(136deg);
+}
+.color{
+    border-color: black;
+}
+.mr
+{
+    margin-left: 38%;
+    margin-top: 5%;
+}
+body{
+    background-color: aqua;
+}
+.bt
+{
+    margin-top: 27%;
+    margin-left: 28.5%;
+}
+.bt2
+{
+    margin-top: 1%;
+    margin-left: 28%;
+    margin-right: 0;
+}
+hr
+{
+    width: 510px;    
+    border: 6px solid black;
+    margin-bottom: 3%
+}
+
+.d-hn
+{
+    display: none;
+    /* margin: 0 10%; */
+}
+.death
+{
+    width: 146px;
+    position: absolute;
+    margin-left: 12.2%;
+    margin-top: 3.9%;
+}
+.happy
+{
+    width: 63px;
+    position: absolute;
+    margin-left: 15.3%;
+    margin-top: 4.3%;
+}
+#cetegory
+{
+    margin-left: 5%;
+}
+#chn{
+    margin-left: 19%;
+    background-color: transparent;
+    color: teal;
+    border-color: teal;
+    margin-bottom: 3%;
+}
+#chn:hover
+{
+ background-color: teal;   
+ color: peachpuff;
+}
